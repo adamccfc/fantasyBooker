@@ -1,8 +1,18 @@
 {
-  "stipulation": "Single",
-  "wrestlers": ["Shawn Michaels", "AJ Styles"],
+  "stipulation": "Triple Threat",
+  "wrestlers": ["Shawn Michaels", "AJ Styles", "Chris Jericho"],
   "event": "WrestleMania",
   "timeLimit": "30 minutes",
+  "votes": {
+    "upVotes": 123,
+    "downVotes": 20
+  }
+},
+{
+  "stipulation": "Hell In A Cell",
+  "wrestlers": ["Doink The Clown", "The Brooklyn Brawler"],
+  "event": "Sunday Night Heat",
+  "timeLimit": "60 minutes",
   "votes": {
     "upVotes": 123,
     "downVotes": 20
