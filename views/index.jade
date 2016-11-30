@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  each match, i in matches
+    li=match.stipulation
+    each wrestler in match.wrestlers
+      h1=wrestler

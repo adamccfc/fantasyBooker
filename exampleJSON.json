@@ -1,0 +1,10 @@
+{
+  "stipulation": "Single",
+  "wrestlers": ["Shawn Michaels", "AJ Styles"],
+  "event": "WrestleMania",
+  "timeLimit": "30 minutes",
+  "votes": {
+    "upVotes": 123,
+    "downVotes": 20
+  }
+}
