@@ -5,7 +5,9 @@ block content
   p Welcome to #{title}
 
   each match, i in matches
-    li=match.stipulation
+    span=match.stipulation
+      | &nbsp;-&nbsp;
+    span=match.timeLimit
 
     h1
       each wrestler, index in match.wrestlers
