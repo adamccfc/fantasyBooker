@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  form#formAddMatch(name="addmatch", method="post", action="/add-match")
+    input#stipulation(type="text", placeholder="Match stipulation", name="stipulation")
+    input#event(type="text", placeholder="Event", name="event")
+    select(name="timeLimit")
+      option(value='15 Minutes') 15 Minutes
+      option(value='30 Minutes') 30 Minutes
+      option(value='45 Minutes') 45 Minutes
+      option(value='60 Minutes', selected='') 60 Minutes
+    button#btnSubmit(type="submit") submit

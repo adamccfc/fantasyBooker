@@ -5,13 +5,19 @@ block content
   p Welcome to #{title}
 
   each match, i in matches
-    span=match.stipulation
-      | &nbsp;-&nbsp;
-    span=match.timeLimit
+    if match.event
+      span= match.event
+        | &nbsp;-&nbsp;
+    if match.stipulation
+      span=match.stipulation
+        | &nbsp;-&nbsp;
+    if match.timeLimit
+      span=match.timeLimit
 
     h1
-      each wrestler, index in match.wrestlers
-        =wrestler
-        | &nbsp;
-        if index <= match.wrestlers.length - 2
-          | vs&nbsp;
+      if match.wrestlers
+        each wrestler, index in match.wrestlers
+          =wrestler
+          | &nbsp;
+          if index <= match.wrestlers.length - 2
+            | vs&nbsp;
