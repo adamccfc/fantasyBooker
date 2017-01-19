@@ -2,9 +2,18 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
 
   each match, i in matches
+    h1
+      if match.wrestlers
+        each wrestler, index in match.wrestlers
+          //- If the wrestler value is not blank then show it
+          if wrestler != ''
+            =wrestler
+            | &nbsp;
+            //- if index <= match.wrestlers.length - 2
+            | vs&nbsp;
+
     if match.event
       span= match.event
         | &nbsp;-&nbsp;
@@ -14,10 +23,3 @@ block content
     if match.timeLimit
       span=match.timeLimit
 
-    h1
-      if match.wrestlers
-        each wrestler, index in match.wrestlers
-          =wrestler
-          | &nbsp;
-          if index <= match.wrestlers.length - 2
-            | vs&nbsp;

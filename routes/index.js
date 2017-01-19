@@ -24,6 +24,7 @@ router.post('/add-match', function(req, res) {
   var db = req.db;
 
   // Get our form values. These rely on the "name" attributes
+  var wrestlers = req.body.wrestlers;
   var stipulation = req.body.stipulation;
   var event = req.body.event;
   var timeLimit = req.body.timeLimit;
@@ -33,6 +34,7 @@ router.post('/add-match', function(req, res) {
 
   // Submit to the DB
   collection.insert({
+    "wrestlers": wrestlers,
     "stipulation" : stipulation,
     "event" : event,
     "timeLimit" : timeLimit
