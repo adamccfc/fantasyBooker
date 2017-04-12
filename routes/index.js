@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var db = req.db;
-  var collection = db.get('fantasyBooker');
+  var collection = db.get('matches');
   collection.find({},{},function(e,docs){
     res.render('index', {
       title: "Fantasy Booker",
@@ -14,12 +14,12 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET New User page. */
-router.get('/add-match', function(req, res) {
-  res.render('add-match', { title: 'Add New Match' });
+router.get('/book-match', function(req, res) {
+  res.render('book-match', { title: 'Add New Match' });
 });
 
 /* POST to Add User Service */
-router.post('/add-match', function(req, res) {
+router.post('/book-match', function(req, res) {
   // Set our internal DB variable
   var db = req.db;
 
