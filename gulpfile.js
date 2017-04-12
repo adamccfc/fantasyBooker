@@ -1,12 +1,15 @@
 var gulp = require('gulp');
+var gulpCopy = require('gulp-copy');
 var nodemon = require('gulp-nodemon');
 var sass = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var livereload = require('gulp-livereload');
 
-gulp.task('default', function() {
-  // place code for your default task here
+// Copy bootstrap css
+gulp.task('bootstrap', function() {
+  gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css')
+  .pipe(gulp.dest('./public/css'));
 });
 
 // Sass task
@@ -31,6 +34,7 @@ gulp.task('templates', function() {
     .pipe(livereload());
 });
 
+// Watch task
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch('public/css/**/*.scss', ['styles']);
@@ -45,4 +49,4 @@ gulp.task('watch', function() {
 //   });
 // });
 
-gulp.task('serve', ['watch']);
+gulp.task('serve', ['bootstrap', 'watch']);
