@@ -12,6 +12,12 @@ gulp.task('bootstrap', function() {
   .pipe(gulp.dest('./public/css'));
 });
 
+// Font Awesome
+gulp.task('fonts', function() {
+  gulp.src('./node_modules/font-awesome/fonts/*')
+  .pipe(gulp.dest('./public/fonts'));
+});
+
 // Sass task
 gulp.task('styles', function() {
   return sass('public/css/scss/*.scss', { style: 'expanded' })
@@ -49,4 +55,4 @@ gulp.task('watch', function() {
 //   });
 // });
 
-gulp.task('serve', ['bootstrap', 'watch']);
+gulp.task('serve', ['bootstrap', 'fonts', 'watch']);
