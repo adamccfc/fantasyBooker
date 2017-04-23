@@ -20,7 +20,7 @@ gulp.task('fonts', function() {
 
 // Sass task
 gulp.task('styles', function() {
-  return sass('public/css/scss/*.scss', { style: 'expanded' })
+  return sass('app/scss/*.scss', { style: 'expanded' })
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest('public/css'))
     .pipe(livereload());
@@ -43,7 +43,7 @@ gulp.task('templates', function() {
 // Watch task
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('public/css/**/*.scss', ['styles']);
+  gulp.watch('app/scss/**/*.scss', ['styles']);
   gulp.watch('public/js/*.js', ['scripts']);
   gulp.watch('views/**/*.jade', ['templates']);
 });
