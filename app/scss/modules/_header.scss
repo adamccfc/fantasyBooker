@@ -3,10 +3,50 @@
 }
 
 .logo {
-  border-bottom: 5px solid $brand-primary;
-  padding: 20px 0;
+  display: block;
   font-size: 50px;
   text-align: center;
   font-weight: 800;
-  font-family: $font-primary;
+  color: $brand-primary;
+  text-align: center;
+
+  &:hover {
+    text-decoration: none;
+    color: $brand-primary;
+  }
+
+  .text {
+    margin: 0 15px;
+  }
+
+  .fa {
+    font-size: 22px;
+    vertical-align: 7px;
+    color: $brand-secondary;
+  }
+}
+
+nav {
+  border-top: 5px solid $brand-tertiary;
+  border-bottom: 5px solid $brand-tertiary;
+
+  ul {
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin-right: 20px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $brand-tertiary;
+      }
+    }
+  }
 }
