@@ -5,13 +5,31 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// Mongoose
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+mongoose.connect('mongodb://localhost/fantasyBooker');
+
+// create a schema
+var matchSchema = new Schema({
+  stipulation: String,
+  wrestlers: Array,
+  event: String,
+  timeLimit: String,
+  votes: {
+    likes: Number,
+    dislikes: Number
+  },
+  created_at: Date
+});
+
+var match = mongoose.model('Match', matchSchema);
+module.exports = match;
+
 // MongoDB link
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('localhost:27017/fantasyBooker');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -33,8 +51,10 @@ app.use(function(req,res,next){
   next();
 });
 
-app.use('/', index);
-app.use('/users', users);
+// App routes
+app.use('/', require('./routes/index'));
+app.use('/book-match', require('./routes/book-match'));
+app.use('/match-types', require('./routes/match-types'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
