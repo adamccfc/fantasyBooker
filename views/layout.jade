@@ -2,12 +2,14 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='/css/bootstrap.css')
     link(rel='stylesheet', href='/css/styles.css')
   body
     block header
       include ./includes/header
 
-    block content
+    .main-content
+      block content
 
   script.
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')

@@ -1,6 +1,12 @@
 .header
-  nav
-    ul
-      li: a(href='/') Home
-      li: a(href='/book-match') Book match
-      li: a(href='/match-types') Match Types
+  .container
+    .row
+      .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+        a.logo(href='/')
+          span.fa.fa-star
+          span.text.text-uppercase Fantasy Booker
+          span.fa.fa-star
+        nav
+          ul
+            li: a(href='/book-match') Book Your Match
+            li: a(href='/match-types') Match Types
