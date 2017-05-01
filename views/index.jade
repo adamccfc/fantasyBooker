@@ -20,8 +20,7 @@ block content
               span= match.event
                 | &nbsp;-&nbsp;
             if match.stipulation
-              span=match.stipulation
-                | &nbsp;-&nbsp;
+              a(href='/stipulation/#{match.stipulation}')=match.stipulation
             if match.timeLimit
               span=match.timeLimit
 
