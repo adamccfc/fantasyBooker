@@ -5,10 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var db = req.db;
   var collection = db.get('matches');
-  collection.find({},{},function(e,docs){
+  collection.find({},{},function(err, results){
     res.render('index', {
       title: "Latest Fantasy Matches",
-      "matches" : docs
+      matches: results
     });
   });
 });
