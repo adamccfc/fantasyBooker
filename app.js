@@ -54,7 +54,7 @@ app.use(function(req,res,next){
 // App routes
 app.use('/', require('./routes/index'));
 app.use('/book-match', require('./routes/book-match'));
-app.use('/match-types', require('./routes/match-types'));
+app.use('/stipulations', require('./routes/stipulations'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

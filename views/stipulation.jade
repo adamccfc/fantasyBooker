@@ -6,21 +6,25 @@ block content
       .col-lg-8.offset-lg-2.col-md-10.offset-md-1
         h1=title
 
-        each match, i in matches
-          .col-xs-12
-            if match.wrestlers
-              each wrestler, index in match.wrestlers
-                //- If the wrestler value is not blank then show it
-                if wrestler != ''
-                  span.text-uppercase=wrestler
-                  if index < match.wrestlers.length
-                    | &nbsp;vs&nbsp;
+        if matches.length > 0
+          each match, i in matches
+            .col-xs-12
+              if match.wrestlers
+                each wrestler, index in match.wrestlers
+                  //- If the wrestler value is not blank then show it
+                  if wrestler != ''
+                    span.text-uppercase=wrestler
+                    if index < match.wrestlers.length
+                      | &nbsp;vs&nbsp;
 
-            if match.event
-              span= match.event
-                | &nbsp;-&nbsp;
-            if match.stipulation
-              span=match.stipulation
-                | &nbsp;-&nbsp;
-            if match.timeLimit
-              span=match.timeLimit
+              if match.event
+                span= match.event
+                  | &nbsp;-&nbsp;
+              if match.stipulation
+                span=match.stipulation
+                  | &nbsp;-&nbsp;
+              if match.timeLimit
+                span=match.timeLimit
+
+        else
+          p There are no matches of this type.
