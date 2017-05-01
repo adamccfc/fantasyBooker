@@ -17,6 +17,8 @@ router.post('/', function(req, res) {
   var stipulation = req.body.stipulation;
   var event = req.body.event;
   var timeLimit = req.body.timeLimit;
+  // Create date
+  var dateCreated = new Date();
 
   // Set our collection
   var collection = db.get('matches');
@@ -24,9 +26,10 @@ router.post('/', function(req, res) {
   // Submit to the DB
   collection.insert({
     "wrestlers": wrestlers,
-    "stipulation" : stipulation,
-    "event" : event,
-    "timeLimit" : timeLimit
+    "stipulation": stipulation,
+    "event": event,
+    "timeLimit": timeLimit,
+    "date": dateCreated
   }, function (err, doc) {
     if (err) {
       // If it failed, return error
