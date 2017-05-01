@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET New User page. */
 // NOTE - you need to get the index of the route that has been defined in app.js
 router.get('/', function(req, res) {
-  res.render('book-match', { title: 'Add New Match' });
+  res.render('book-match', { title: 'Book Your Fantasy Match' });
 });
 
 /* POST to Add User Service */
